@@ -1,175 +1,166 @@
-<p align="center">
-  <img src="assets/logo.jpg" width="200"/>
-</p>
+# 🚀 OpenManus-MCP
 
-English | [中文](README_zh.md) | [한국어](README_ko.md) | [日本語](README_ja.md)
+**Powerful AI Agent Automation Tools via Model Context Protocol (MCP)**
 
-[![GitHub stars](https://img.shields.io/github/stars/FoundationAgents/OpenManus?style=social)](https://github.com/FoundationAgents/OpenManus/stargazers)
-&ensp;
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) &ensp;
-[![Discord Follow](https://dcbadge.vercel.app/api/server/DYn29wFk9z?style=flat)](https://discord.gg/DYn29wFk9z)
-[![Demo](https://img.shields.io/badge/Demo-Hugging%20Face-yellow)](https://huggingface.co/spaces/lyh-917/OpenManusDemo)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15186407.svg)](https://doi.org/10.5281/zenodo.15186407)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-# 👋 OpenManus
+OpenManus-MCP is a comprehensive MCP server that brings advanced automation capabilities to AI assistants through a rich collection of tools including browser automation, shell execution, file operations, Python code execution, web search, and more.
 
-Manus is incredible, but OpenManus can achieve any idea without an *Invite Code* 🛫!
+> 🌟 **Built on the foundation of the original [OpenManus](https://github.com/FoundationAgents/OpenManus) project** - a groundbreaking open-source AI agent framework that revolutionized autonomous task execution.
 
-Our team members [@Xinbin Liang](https://github.com/mannaandpoem) and [@Jinyu Xiang](https://github.com/XiangJinyu) (core authors), along with [@Zhaoyang Yu](https://github.com/MoshiQAQ), [@Jiayi Zhang](https://github.com/didiforgithub), and [@Sirui Hong](https://github.com/stellaHSR), we are from [@MetaGPT](https://github.com/geekan/MetaGPT). The prototype is launched within 3 hours and we are keeping building!
+## ✨ Key Features
 
-It's a simple implementation, so we welcome any suggestions, contributions, and feedback!
+- 🌐 **Advanced Browser Automation** - Full Playwright-powered web browser control with AI-powered content extraction
+- 💻 **Shell Command Execution** - Persistent bash sessions with background process support
+- 📝 **Intelligent File Operations** - Comprehensive file and directory management
+- 🐍 **Safe Python Execution** - Isolated Python code execution with timeout protection
+- 🔍 **Multi-Engine Web Search** - Search across Google, Bing, DuckDuckGo with content fetching
+- 🧹 **Resource Management** - Automatic cleanup and process termination
+- ⚡ **High Performance** - Optimized for speed and reliability
+- 🔒 **Security First** - Process isolation and timeout protection
 
-Enjoy your own agent with OpenManus!
+## 🎯 Perfect For
 
-We're also excited to introduce [OpenManus-RL](https://github.com/OpenManus/OpenManus-RL), an open-source project dedicated to reinforcement learning (RL)- based (such as GRPO) tuning methods for LLM agents, developed collaboratively by researchers from UIUC and OpenManus.
+- **AI-Powered Web Automation** - Scraping, form filling, data extraction
+- **Development Workflows** - Code analysis, testing, deployment automation  
+- **Data Collection** - Research, monitoring, competitive analysis
+- **System Administration** - File management, process control, maintenance
+- **Research & Analysis** - Information gathering, report generation
 
-## Project Demo
+## 🚀 Quick Start
 
-<video src="https://private-user-images.githubusercontent.com/61239030/420168772-6dcfd0d2-9142-45d9-b74e-d10aa75073c6.mp4?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDEzMTgwNTksIm5iZiI6MTc0MTMxNzc1OSwicGF0aCI6Ii82MTIzOTAzMC80MjAxNjg3NzItNmRjZmQwZDItOTE0Mi00NWQ5LWI3NGUtZDEwYWE3NTA3M2M2Lm1wND9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAzMDclMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMzA3VDAzMjIzOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTdiZjFkNjlmYWNjMmEzOTliM2Y3M2VlYjgyNDRlZDJmOWE3NWZhZjE1MzhiZWY4YmQ3NjdkNTYwYTU5ZDA2MzYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.UuHQCgWYkh0OQq9qsUWqGsUbhG3i9jcZDAMeHjLt5T4" data-canonical-src="https://private-user-images.githubusercontent.com/61239030/420168772-6dcfd0d2-9142-45d9-b74e-d10aa75073c6.mp4?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDEzMTgwNTksIm5iZiI6MTc0MTMxNzc1OSwicGF0aCI6Ii82MTIzOTAzMC80MjAxNjg3NzItNmRjZmQwZDItOTE0Mi00NWQ5LWI3NGUtZDEwYWE3NTA3M2M2Lm1wND9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAzMDclMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMzA3VDAzMjIzOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTdiZjFkNjlmYWNjMmEzOTliM2Y3M2VlYjgyNDRlZDJmOWE3NWZhZjE1MzhiZWY4YmQ3NjdkNTYwYTU5ZDA2MzYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.UuHQCgWYkh0OQq9qsUWqGsUbhG3i9jcZDAMeHjLt5T4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-height:640px; min-height: 200px"></video>
+### Prerequisites
 
-## Installation
+- Python 3.12 or higher
+- [uv](https://docs.astral.sh/uv/) package manager (recommended)
 
-We provide two installation methods. Method 2 (using uv) is recommended for faster installation and better dependency management.
+### Installation
 
-### Method 1: Using conda
-
-1. Create a new conda environment:
-
-```bash
-conda create -n open_manus python=3.12
-conda activate open_manus
-```
-
-2. Clone the repository:
+#### Option 1: Using our setup script (Windows)
 
 ```bash
-git clone https://github.com/FoundationAgents/OpenManus.git
-cd OpenManus
+git clone https://github.com/your-username/OpenManus-MCP.git
+cd OpenManus-MCP
+.\setup.bat
 ```
 
-3. Install dependencies:
+#### Option 2: Manual installation
+
+1. **Clone the repository:**
 
 ```bash
-pip install -r requirements.txt
+git clone https://github.com/your-username/OpenManus-MCP.git
+cd OpenManus-MCP
 ```
 
-### Method 2: Using uv (Recommended)
-
-1. Install uv (A fast Python package installer and resolver):
-
-```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh
-```
-
-2. Clone the repository:
-
-```bash
-git clone https://github.com/FoundationAgents/OpenManus.git
-cd OpenManus
-```
-
-3. Create a new virtual environment and activate it:
+2. **Create virtual environment:**
 
 ```bash
 uv venv --python 3.12
-source .venv/bin/activate  # On Unix/macOS
-# Or on Windows:
-# .venv\Scripts\activate
+source .venv/bin/activate  # Unix/macOS
+# .venv\Scripts\activate  # Windows
 ```
 
-4. Install dependencies:
+3. **Install dependencies:**
 
 ```bash
-uv pip install -r requirements.txt
+uv pip install -r requirements-mcp.txt
 ```
 
-### Browser Automation Tool (Optional)
+4. **Install browser dependencies (optional but recommended):**
+
 ```bash
 playwright install
 ```
 
-## Configuration
+### Running the MCP Server
 
-OpenManus requires configuration for the LLM APIs it uses. Follow these steps to set up your configuration:
-
-1. Create a `config.toml` file in the `config` directory (you can copy from the example):
+#### Quick Start (Windows)
 
 ```bash
-cp config/config.example.toml config/config.toml
+.\start.bat
 ```
 
-2. Edit `config/config.toml` to add your API keys and customize settings:
-
-```toml
-# Global LLM configuration
-[llm]
-model = "gpt-4o"
-base_url = "https://api.openai.com/v1"
-api_key = "sk-..."  # Replace with your actual API key
-max_tokens = 4096
-temperature = 0.0
-
-# Optional configuration for specific LLM models
-[llm.vision]
-model = "gpt-4o"
-base_url = "https://api.openai.com/v1"
-api_key = "sk-..."  # Replace with your actual API key
-```
-
-## Quick Start
-
-One line for run OpenManus:
+#### Manual Start
 
 ```bash
-python main.py
+python mcp_server_working.py
 ```
 
-Then input your idea via terminal!
+### Integration with Warp Terminal
 
-For MCP tool version, you can run:
-```bash
-python run_mcp.py
+1. **Add to Warp MCP configuration:**
+
+Add this to your Warp MCP settings:
+
+```json
+{
+  "mcpServers": {
+    "openmanus": {
+      "command": "path/to/your/OpenManus-MCP/start.bat",
+      "description": "OpenManus automation tools with browser, shell, file ops, Python execution, and web search"
+    }
+  }
+}
 ```
 
-For unstable multi-agent version, you also can run:
+2. **Restart Warp** to load the new MCP server
 
-```bash
-python run_flow.py
+3. **Start using tools** - The AI assistant will now have access to all OpenManus tools!
+
+## 🛠️ Available Tools
+
+OpenManus-MCP provides a comprehensive suite of automation tools:
+
+| Tool | Description | Key Features |
+|------|-------------|-------------|
+| 🌐 **browser_use** | Advanced browser automation | Playwright-powered, AI content extraction, tab management |
+| 💻 **bash** | Shell command execution | Persistent sessions, background processes, interactive support |
+| 📝 **str_replace_editor** | File editing and management | Precise string replacement, undo support, directory viewing |
+| 🐍 **python** | Python code execution | Process isolation, timeout protection, output capture |
+| 📁 **file_ops** | File system operations | Directory management, file operations, permissions |
+| 🔍 **web_search** | Multi-engine web search | Google, Bing, DuckDuckGo with content fetching |
+| 🛑 **terminate** | Process control | Clean resource management and termination |
+
+## 📚 Documentation
+
+- **[Comprehensive Tutorial](TUTORIAL.md)** - Detailed guide for all tools with examples
+- **[MCP Integration Guide](README-MCP.md)** - Technical setup and integration details
+
+## 📁 Project Structure
+
+```
+OpenManus-MCP/
+├── mcp_server_working.py          # Main MCP server
+├── start.bat                      # Windows startup script
+├── setup.bat                      # Windows setup script 
+├── requirements-mcp.txt           # Simplified dependencies
+├── warp-mcp-config.json          # Warp integration config
+├── TUTORIAL.md                   # Complete usage tutorial
+├── README-MCP.md                 # Technical documentation
+└── app/
+    └── tool/
+        ├── bash.py                   # Shell command tool
+        ├── browser_use_tool.py       # Browser automation  
+        ├── file_operations.py        # File system operations
+        ├── python_execute.py         # Python execution
+        ├── str_replace_editor.py     # File editing
+        ├── web_search.py             # Web search
+        └── terminate.py              # Process termination
 ```
 
-### Custom Adding Multiple Agents
+## 🤝 Contributing
 
-Currently, besides the general OpenManus Agent, we have also integrated the DataAnalysis Agent, which is suitable for data analysis and data visualization tasks. You can add this agent to `run_flow` in `config.toml`.
+We welcome contributions! Please feel free to:
 
-```toml
-# Optional configuration for run-flow
-[runflow]
-use_data_analysis_agent = true     # Disabled by default, change to true to activate
-```
-In addition, you need to install the relevant dependencies to ensure the agent runs properly: [Detailed Installation Guide](app/tool/chart_visualization/README.md##Installation)
+- 🐛 Report bugs via [GitHub Issues](../../issues)
+- 💡 Suggest new features or improvements
+- 🔧 Submit pull requests
+- 📚 Improve documentation
 
-## How to contribute
+## 📜 License
 
-We welcome any friendly suggestions and helpful contributions! Just create issues or submit pull requests.
-
-Or contact @mannaandpoem via 📧email: mannaandpoem@gmail.com
-
-**Note**: Before submitting a pull request, please use the pre-commit tool to check your changes. Run `pre-commit run --all-files` to execute the checks.
-
-## Community Group
-Join our networking group on Feishu and share your experience with other developers!
-
-<div align="center" style="display: flex; gap: 20px;">
-    <img src="assets/community_group.jpg" alt="OpenManus 交流群" width="300" />
-</div>
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=FoundationAgents/OpenManus&type=Date)](https://star-history.com/#FoundationAgents/OpenManus&Date)
-
-## Sponsors
-Thanks to [PPIO](https://ppinfra.com/user/register?invited_by=OCPKCN&utm_source=github_openmanus&utm_medium=github_readme&utm_campaign=link) for computing source support.
-> PPIO: The most affordable and easily-integrated MaaS and GPU cloud solution.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 
 ## Acknowledgement

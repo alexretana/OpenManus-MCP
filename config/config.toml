@@ -1,0 +1,48 @@
+# OpenManus-MCP Configuration
+# Configuration for MCP server functionality with local Ollama models
+
+# Global LLM configuration with local Ollama
+[llm]
+api_type = "ollama"
+model = "gpt-oss:20b"
+base_url = "http://localhost:11434/v1"
+api_key = "ollama"
+max_tokens = 4096
+temperature = 0.0
+
+# Optional configuration for specific LLM models (using coding model for technical tasks)
+[llm.vision]
+api_type = "ollama"
+model = "qwen2.5-coder:14b"
+base_url = "http://localhost:11434/v1"
+api_key = "ollama"
+max_tokens = 4096
+temperature = 0.0
+
+# Browser configuration for automation tasks
+[browser]
+headless = false                           # Show browser for debugging
+disable_security = true                    # Allow cross-origin requests
+extra_chromium_args = []                   # Additional browser arguments
+
+# Search configuration for web search functionality
+[search]
+engine = "Google"                          # Primary search engine
+fallback_engines = ["DuckDuckGo", "Bing"] # Fallback search engines
+lang = "en"                                # Language for search results
+country = "us"                             # Country for location-based searches
+
+# MCP (Model Context Protocol) configuration
+[mcp]
+server_reference = "app.mcp.server"        # Default server module reference
+
+# Optional Runflow configuration
+[runflow]
+use_data_analysis_agent = false            # Data Analysis Agent disabled by default
+
+# Embedding configuration for semantic tasks
+# Note: nomic-embed-text model available for vector embeddings
+[embedding]
+model = "nomic-embed-text"
+api_type = "ollama"
+base_url = "http://localhost:11434"

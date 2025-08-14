@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "OpenManus": {
+      "command": "start.bat",
+      "args": [],
+      "working_directory": "D:\\alexr\\GitHub\\OpenManus-MCP",
+      "env": {
+        "PYTHONPATH": "D:\\alexr\\GitHub\\OpenManus-MCP"
+      }
+    }
+  }
+}
